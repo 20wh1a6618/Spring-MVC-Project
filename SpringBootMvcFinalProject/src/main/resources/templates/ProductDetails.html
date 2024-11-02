@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5" th:fragment="content">
+    <h2>Product Details</h2>
+    <div th:if="${product != null}">
+        <p><strong>ID:</strong> <span th:text="${product.proId}"></span></p>
+        <p><strong>Name:</strong> <span th:text="${product.proName}"></span></p>
+        <p><strong>Brand:</strong> <span th:text="${product.proBrand}"></span></p>
+        <p><strong>Price:</strong> <span th:text="${product.proPrice}"></span></p>
+        <p><strong>Discounted Price:</strong> <span th:text="${product.proDisPrice}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${product.proDescription}"></span></p>
+        <p><strong>Category:</strong> <span th:text="${product.proCategory}"></span></p>
+        <p><strong>Created At:</strong> <span th:text="${(product.createdAt}"></span></p>
+        <p><strong>Created By:</strong> <span th:text="${product.createdBy}"></span></p>
+    </div>
+    <div th:if="${product == null}">
+        <p>Product not found.</p>
+    </div>
+    <a href="/getproducts" class="btn btn-secondary mt-3">Back to Product List</a>
+</div>
+</body>
+</html>

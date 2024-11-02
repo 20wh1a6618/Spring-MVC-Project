@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Product Details</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Product Details</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 th:text="${product.proName}">Product Name</h2>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Brand: <span th:text="${product.proBrand}">Brand Name</span></h5>
+            <p class="card-text">Description: <span th:text="${product.proDescription}">Product Description</span></p>
+            <p class="card-text">Category: <span th:text="${product.proCategory}">Product Category</span></p>
+            <p class="card-text">Price: $<span th:text="${product.proPrice}">Price</span></p>
+            <p class="card-text">Discount: <span th:text="${product.disPrice}">Discount</span>%</p>
+            <p class="card-text">Created At: <span th:text="${product.createdAt}">Creation Date</span></p>
+            <p class="card-text">Created By: <span th:text="${product.CreatedBy}">Creator Name</span></p>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="#" class="btn btn-primary">Back to Products</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

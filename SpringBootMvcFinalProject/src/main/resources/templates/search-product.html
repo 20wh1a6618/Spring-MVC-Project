@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Product</title>
+</head>
+<body>
+<div class="form-group" th:fragment = "content">
+    <h1>Search for a Product</h1>
+	<form action="#" th:action="@{/searchProduct}" method="get">        
+            <label for="proId">Product ID:</label>
+            <input type="number" class="form-control" id="proId" name="proId" required>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <div th:if="${product != null}">
+        <h2>Product Details</h2>
+        <p>Name: <span th:text="${product.proName}"></span></p>
+        <p>Price: <span th:text="${product.proPrice}"></span></p>
+        <p>Category: <span th:text="${product.proCategory}"></span></p>
+        <p>Description: <span th:text="${product.proDescription}"></span></p>
+        <p>Brand: <span th:text="${product.proBrand}"></span></p>
+    </div>
+
+    <div th:if="${error != null}">
+        <p th:text="${error}"></p>
+    </div>
+    </div>
+</body>
+</html>
